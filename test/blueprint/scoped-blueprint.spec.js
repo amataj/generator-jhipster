@@ -6,7 +6,7 @@ const expectedFiles = require('../utils/expected-files');
 const getFilesForOptions = require('../utils/utils').getFilesForOptions;
 const angularFiles = require('../../generators/client/files-angular').files;
 
-describe('JHipster application generator with scoped blueprint', () => {
+describe('MSX application generator with scoped blueprint', () => {
     describe('generate monolith application with scoped blueprint', () => {
         before(done => {
             helpers

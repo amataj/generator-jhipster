@@ -9,7 +9,7 @@ const mockBlueprintSubGen = class extends CommonGenerator {
         super(args, { fromBlueprint: true, ...opts }); // fromBlueprint variable is important
         const jhContext = (this.jhipsterContext = this.options.jhipsterContext);
         if (!jhContext) {
-            this.error("This is a JHipster blueprint and should be used only like 'jhipster --blueprint myblueprint')}");
+            this.error("This is a MSX blueprint and should be used only like 'jhipster --blueprint myblueprint')}");
         }
         this.configOptions = jhContext.configOptions || {};
     }
@@ -49,7 +49,7 @@ const mockBlueprintSubGen = class extends CommonGenerator {
     }
 };
 
-describe('JHipster common generator with blueprint', () => {
+describe('MSX common generator with blueprint', () => {
     const blueprintNames = ['generator-jhipster-myblueprint', 'myblueprint'];
 
     blueprintNames.forEach(blueprintName => {

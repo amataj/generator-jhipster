@@ -1,7 +1,7 @@
 /**
- * Copyright 2013-2019 the original author or authors from the JHipster project.
+ * Copyright 2013-2019 the original author or authors from the MSX project.
  *
- * This file is part of the JHipster project, see https://www.jhipster.tech/
+ * This file is part of the MSX project, see https://www.jhipster.tech/
  * for more information.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -182,7 +182,7 @@ module.exports = class extends Generator {
                 content += `            '${language}'${i !== languages.length - 1 ? ',' : ''}\n`;
             });
             content +=
-                '            // jhipster-needle-i18n-language-constant - JHipster will add/remove languages in this array\n        ]';
+                '            // jhipster-needle-i18n-language-constant - MSX will add/remove languages in this array\n        ]';
 
             jhipsterUtils.replaceContent(
                 {
@@ -219,7 +219,7 @@ module.exports = class extends Generator {
             languages.forEach((language, i) => {
                 content += `    '${language}'${i !== languages.length - 1 ? ',' : ''}\n`;
             });
-            content += '    // jhipster-needle-i18n-language-constant - JHipster will add/remove languages in this array\n];';
+            content += '    // jhipster-needle-i18n-language-constant - MSX will add/remove languages in this array\n];';
 
             jhipsterUtils.replaceContent(
                 {
@@ -253,7 +253,7 @@ module.exports = class extends Generator {
             languages.forEach((language, i) => {
                 content += `        "${language}"${i !== languages.length - 1 ? ',' : ''}\n`;
             });
-            content += '        // jhipster-needle-i18n-language-constant - JHipster will add/remove languages in this array\n    };';
+            content += '        // jhipster-needle-i18n-language-constant - MSX will add/remove languages in this array\n    };';
 
             jhipsterUtils.replaceContent(
                 {
@@ -290,7 +290,7 @@ module.exports = class extends Generator {
             this.generateLanguageOptions(languages, this.clientFramework).forEach((ln, i) => {
                 content += `        ${ln}${i !== languages.length - 1 ? ',' : ''}\n`;
             });
-            content += '        // jhipster-needle-i18n-language-key-pipe - JHipster will add/remove languages in this object\n    };';
+            content += '        // jhipster-needle-i18n-language-key-pipe - MSX will add/remove languages in this object\n    };';
 
             jhipsterUtils.replaceContent(
                 {
@@ -327,7 +327,7 @@ module.exports = class extends Generator {
                 }\n`;
             });
             content +=
-                '                    // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array\n' +
+                '                    // jhipster-needle-i18n-language-webpack - MSX will add/remove languages in this array\n' +
                 '                ]';
 
             jhipsterUtils.replaceContent(
@@ -363,7 +363,7 @@ module.exports = class extends Generator {
                 content += `                    '${this.getMomentLocaleId(language)}'${i !== languages.length - 1 ? ',' : ''}\n`;
             });
             content +=
-                '                    // jhipster-needle-i18n-language-moment-webpack - JHipster will add/remove languages in this array\n' +
+                '                    // jhipster-needle-i18n-language-moment-webpack - MSX will add/remove languages in this array\n' +
                 '                ]';
 
             jhipsterUtils.replaceContent(
@@ -399,7 +399,7 @@ module.exports = class extends Generator {
                 content += `        '${this.getMomentLocaleId(language)}'${i !== languages.length - 1 ? ',' : ''}\n`;
             });
             content +=
-                '        // jhipster-needle-i18n-language-moment-webpack - JHipster will add/remove languages in this array\n      ]';
+                '        // jhipster-needle-i18n-language-moment-webpack - MSX will add/remove languages in this array\n      ]';
 
             jhipsterUtils.replaceContent(
                 {
@@ -626,11 +626,11 @@ module.exports = class extends Generator {
     }
 
     /**
-     * get hibernate SnakeCase in JHipster preferred style.
+     * get hibernate SnakeCase in MSX preferred style.
      *
      * @param {string} value - table column name or table name string
      * @see org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
-     * @returns hibernate SnakeCase in JHipster preferred style
+     * @returns hibernate SnakeCase in MSX preferred style
      */
     hibernateSnakeCase(value) {
         let res = '';
@@ -884,7 +884,7 @@ module.exports = class extends Generator {
                 }
                 if (!(process.release || {}).lts) {
                     this.warning(
-                        'Your Node version is not LTS (Long Term Support), use it at your own risk! JHipster does not support non-LTS releases, so if you encounter a bug, please use a LTS version first.'
+                        'Your Node version is not LTS (Long Term Support), use it at your own risk! MSX does not support non-LTS releases, so if you encounter a bug, please use a LTS version first.'
                     );
                 }
             }
@@ -1348,12 +1348,12 @@ module.exports = class extends Generator {
     }
 
     /**
-     * Check if the subgenerator has been invoked from JHipster CLI or from Yeoman (yo jhipster:subgenerator)
+     * Check if the subgenerator has been invoked from MSX CLI or from Yeoman (yo jhipster:subgenerator)
      */
     checkInvocationFromCLI() {
         if (!this.options['from-cli']) {
             this.warning(
-                `Deprecated: JHipster seems to be invoked using Yeoman command. Please use the JHipster CLI. Run ${chalk.red(
+                `Deprecated: MSX seems to be invoked using Yeoman command. Please use the MSX CLI. Run ${chalk.red(
                     'jhipster <command>'
                 )} instead of ${chalk.red('yo jhipster:<command>')}`
             );

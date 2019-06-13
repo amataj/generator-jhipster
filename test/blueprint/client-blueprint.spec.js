@@ -9,7 +9,7 @@ const mockBlueprintSubGen = class extends ClientGenerator {
         super(args, { fromBlueprint: true, ...opts }); // fromBlueprint variable is important
         const jhContext = (this.jhipsterContext = this.options.jhipsterContext);
         if (!jhContext) {
-            this.error("This is a JHipster blueprint and should be used only like 'jhipster --blueprint myblueprint')}");
+            this.error("This is a MSX blueprint and should be used only like 'jhipster --blueprint myblueprint')}");
         }
         this.configOptions = jhContext.configOptions || {};
         // This sets up options for this sub generator and is being reused from JHipster
@@ -51,7 +51,7 @@ const mockBlueprintSubGen = class extends ClientGenerator {
     }
 };
 
-describe('JHipster client generator with blueprint', () => {
+describe('MSX client generator with blueprint', () => {
     const blueprintNames = ['generator-jhipster-myblueprint', 'myblueprint'];
 
     blueprintNames.forEach(blueprintName => {

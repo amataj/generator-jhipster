@@ -10,7 +10,7 @@ test/temp/
 *debug.log*
 .vscode
 .DS_Store
-/.jhipster
+/.MSX
 yarn-error.log
 *.sw?
 /test/templates/import-jdl/*.png

@@ -14,7 +14,7 @@ const expectedFiles = {
     ]
 };
 
-describe('JHipster Heroku Sub Generator', () => {
+describe('MSX Heroku Sub Generator', () => {
     const herokuAppName = 'jhipster-test';
     let stub;
 

@@ -61,7 +61,7 @@ Additional builds at [hipster-labs/jhipster-daily-builds](https://github.com/hip
 | Yarn                 | [![Build Status][img-yarn]][azure-url]                 |
 | No Database          | [![Build Status][img-nodatabase]][azure-url]           |
 
-## Analysis of the sample JHipster project
+## Analysis of the sample MSX project
 
 [![sonar-quality-gate][sonar-quality-gate]][sonar-url] [![sonar-coverage][sonar-coverage]][sonar-url] [![sonar-bugs][sonar-bugs]][sonar-url] [![sonar-vulnerabilities][sonar-vulnerabilities]][sonar-url]
 
