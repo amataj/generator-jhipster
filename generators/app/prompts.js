@@ -24,8 +24,9 @@ module.exports = {
     askForApplicationType,
     askForModuleName,
     askFori18n,
-    askForTestOpts,
-    askForMoreModules
+    askForTestOpts
+    // ,
+    // askForMoreModules
 };
 
 function askForInsightOptIn() {
@@ -48,24 +49,12 @@ function askForInsightOptIn() {
 function askForApplicationType(meta) {
     if (!meta && this.existingProject) return;
 
-    const DEFAULT_APPTYPE = 'monolith';
+    const DEFAULT_APPTYPE = 'microservice';
 
     const applicationTypeChoices = [
         {
-            value: DEFAULT_APPTYPE,
-            name: 'Monolithic application (recommended for simple projects)'
-        },
-        {
             value: 'microservice',
             name: 'Microservice application'
-        },
-        {
-            value: 'gateway',
-            name: 'Microservice gateway'
-        },
-        {
-            value: 'uaa',
-            name: 'JHipster UAA server (for microservice OAuth2 authentication)'
         }
     ];
 
@@ -80,32 +69,8 @@ function askForApplicationType(meta) {
         });
     }
 
-    const PROMPT = {
-        type: 'list',
-        name: 'applicationType',
-        message: `Which ${chalk.yellow('*type*')} of application would you like to create?`,
-        choices: applicationTypeChoices,
-        default: DEFAULT_APPTYPE
-    };
-
-    if (meta) return PROMPT; // eslint-disable-line consistent-return
-
-    const done = this.async();
-
-    const promise = this.skipServer ? Promise.resolve({ applicationType: DEFAULT_APPTYPE }) : this.prompt(PROMPT);
-    promise.then(prompt => {
-        if (prompt.applicationType === 'reactive') {
-            this.applicationType = this.configOptions.applicationType = DEFAULT_APPTYPE;
-            this.reactive = this.configOptions.reactive = true;
-        } else if (prompt.applicationType === 'reactive-micro') {
-            this.applicationType = this.configOptions.applicationType = 'microservice';
-            this.reactive = this.configOptions.reactive = true;
-        } else {
-            this.applicationType = this.configOptions.applicationType = prompt.applicationType;
-            this.reactive = this.configOptions.reactive = false;
-        }
-        done();
-    });
+    this.applicationType = this.configOptions.applicationType = DEFAULT_APPTYPE;
+    this.reactive = this.configOptions.reactive = false;
 }
 
 function askForModuleName() {

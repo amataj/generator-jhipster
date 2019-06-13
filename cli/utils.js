@@ -25,7 +25,7 @@ const _ = require('lodash');
 
 const SUB_GENERATORS = require('./commands');
 
-const CLI_NAME = 'jhipster';
+const CLI_NAME = 'msx-generator';
 const GENERATOR_NAME = 'generator-jhipster';
 const debug = function(msg) {
     if (this.debugEnabled) {
