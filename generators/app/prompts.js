@@ -24,9 +24,8 @@ module.exports = {
     askForApplicationType,
     askForModuleName,
     askFori18n,
-    askForTestOpts
-    // ,
-    // askForMoreModules
+    askForTestOpts,
+    askForMoreModules
 };
 
 function askForInsightOptIn() {
@@ -49,9 +48,13 @@ function askForInsightOptIn() {
 function askForApplicationType(meta) {
     if (!meta && this.existingProject) return;
 
-    const DEFAULT_APPTYPE = 'microservice';
+    const DEFAULT_APPTYPE = 'monolith';
 
     const applicationTypeChoices = [
+        {
+            value: DEFAULT_APPTYPE,
+            name: 'Microservice application with UI'
+        },
         {
             value: 'microservice',
             name: 'Microservice application'
@@ -65,6 +68,17 @@ function askForApplicationType(meta) {
             name: 'JHipster UAA server (for microservice OAuth2 authentication)'
         }
     ];
+
+    if (this.experimental) {
+        applicationTypeChoices.push({
+            value: 'reactive',
+            name: '[Alpha] Reactive monolithic application'
+        });
+        applicationTypeChoices.push({
+            value: 'reactive-micro',
+            name: '[Alpha] Reactive microservice application'
+        });
+    }
 
     const PROMPT = {
         type: 'list',
