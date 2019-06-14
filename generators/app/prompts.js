@@ -53,7 +53,7 @@ function askForApplicationType(meta) {
     const applicationTypeChoices = [
         {
             value: DEFAULT_APPTYPE,
-            name: 'Monolithic application (recommended for simple projects)'
+            name: 'Microservice application with UI'
         },
         {
             value: 'microservice',

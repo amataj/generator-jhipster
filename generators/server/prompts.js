@@ -62,7 +62,7 @@ function askForServerSideOpts(meta) {
                     ? true
                     : 'The package name you have provided is not a valid Java package name.',
             message: 'What is your default Java package name?',
-            default: 'com.mycompany.myapp',
+            default: 'com.cisco.msx.msxservice',
             store: true
         },
         {
@@ -72,19 +72,11 @@ function askForServerSideOpts(meta) {
             message: 'Which service discovery server do you want to use?',
             choices: [
                 {
-                    value: 'eureka',
-                    name: 'JHipster Registry (uses Eureka, provides Spring Cloud Config support and monitoring dashboards)'
-                },
-                {
                     value: 'consul',
                     name: 'Consul'
-                },
-                {
-                    value: false,
-                    name: 'No service discovery'
                 }
             ],
-            default: 'eureka'
+            default: 'consul'
         },
         {
             when: applicationType === 'monolith',
